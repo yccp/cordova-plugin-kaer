@@ -1,0 +1,6 @@
+repositories {
+}
+
+dependencies {
+    compile files('libs/cardsdk.jar')
+}

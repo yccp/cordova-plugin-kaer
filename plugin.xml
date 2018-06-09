@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-kaer" version="0.1.0">
+  <name>Kaer</name>
+  <description>Cordova Plugin for Kaer id card reader</description>
+  <license>ISC</license>
+  <keywords>cordova,umeng,social,share</keywords>
+  <js-module src="www/Kaer.js" name="Kaer">
+    <clobbers target="Kaer" />
+  </js-module>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Kaer">
+        <param name="ios-package" value="Kaer" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <framework src="libicucore.tbd" />
+    <framework src="sdk/ios/KaerIDCardItem.framework" custom="true" />
+    <header-file src="src/ios/Kaer.h" />
+    <source-file src="src/ios/Kaer.m" />
+  </platform>
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Kaer">
+        <param name="android-package" value="news.chen.yu.ionic.Kaer"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.NFC" />
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.WAKE_LOCK" />
+      <uses-permission android:name="android.hardware.usb.host" />
+      <uses-permission android:name="android.permission.BLUETOOTH" />
+      <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.VIBRATE" />
+    </config-file>
+    <framework src="src/android/Kaer.gradle" custom="true" type="gradleReference" />
+    <resource-file src="sdk/android/cardsdk.jar" target="libs/cardsdk.jar" />
+    <source-file src="sdk/android/arm64-v8a/libiskaershare.so" target-dir="libs/arm64-v8a/" />
+    <source-file src="sdk/android/arm64-v8a/libserial_port.so" target-dir="libs/arm64-v8a/" />
+    <source-file src="sdk/android/arm64-v8a/libwlt920bmp.so" target-dir="libs/arm64-v8a/" />
+    <source-file src="sdk/android/armeabi/libiskaershare.so" target-dir="libs/armeabi/" />
+    <source-file src="sdk/android/armeabi/libserial_port.so" target-dir="libs/armeabi/" />
+    <source-file src="sdk/android/armeabi/libwlt920bmp.so" target-dir="libs/armeabi/" />
+    <source-file src="sdk/android/armeabi-v7a/libiskaershare.so" target-dir="libs/armeabi-v7a/" />
+    <source-file src="sdk/android/armeabi-v7a/libserial_port.so" target-dir="libs/armeabi-v7a/" />
+    <source-file src="sdk/android/armeabi-v7a/libwlt920bmp.so" target-dir="libs/armeabi-v7a/" />
+    <source-file src="src/android/Kaer.java" target-dir="src/news/chen/yu/ionic" />
+  </platform>
+</plugin>
