@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-kaer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Kaer id card reader",
   "main": "index.js",
   "scripts": {
