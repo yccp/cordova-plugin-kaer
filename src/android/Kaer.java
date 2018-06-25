@@ -127,6 +127,7 @@ public class Kaer extends CordovaPlugin implements OnClientCallback, OnBluetooth
             try {
                 data.put("name", idCardItem.partyName);
                 data.put("image", image);
+                data.put("name", idCardItem.partyName);
                 data.put("gender", idCardItem.gender);
                 data.put("ethnic", idCardItem.nation);
                 data.put("dateOfBirth", idCardItem.bornDay);
